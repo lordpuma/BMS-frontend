@@ -12,7 +12,7 @@ export class ApiService {
   ) {}
 
 
-  async ping(): Promise<any> { 
+  async ping(): Promise<any> {
     const client = await this.authaService.getAuth0Client();
     const token = await client.getTokenSilently();
 
