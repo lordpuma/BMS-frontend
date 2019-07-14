@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
    */
   async login() {
 		await this.auth0Client.loginWithRedirect({
-			redirect_uri: `${window.location.origin}/auth/callback`
+			redirect_uri: `${window.location.origin}/auth/callback`,
 		});
   }
 
