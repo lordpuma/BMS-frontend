@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "bms-246416",
+    "production": "bms-246416"
+  }
+}
