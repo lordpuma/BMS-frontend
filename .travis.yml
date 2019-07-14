@@ -10,7 +10,7 @@ before_script:
 - npm install -g @angular/cli
 script:
 - ng lint
-- ng build --prod
+- ng build --prod -op dist/bms-frontend
 
 deploy:
   skip_cleanup: true 
