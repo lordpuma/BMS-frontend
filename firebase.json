@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/bms-frontend",
     "project": "bms-246416",
     "ignore": [
       "firebase.json",
