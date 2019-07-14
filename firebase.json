@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "dist",
-    "project": "bms-",
+    "project": "bms-246416",
     "ignore": [
       "firebase.json",
       "**/.*",
