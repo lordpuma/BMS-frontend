@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 import { BehaviorSubject } from 'rxjs';
+import {environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,10 @@ export class AuthService {
 
   // Auth0 application configuration
   config = {
-    domain: 'dev-m236ic1u.eu.auth0.com',
-    client_id: '82W4viw3kZa1YbHpaY3dq99m6cHAxGhc',
+    domain: environment.auth0_url,
+    client_id: environment.auth0_id,
     redirect_uri: `${window.location.origin}/auth/callback`,
-    audience: 'test-api',
+    audience: environment.auth0_audience,
   };
 
   /**

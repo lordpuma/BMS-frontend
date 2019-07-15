@@ -9,4 +9,15 @@
       </pre>
     </div>
   </div>
+  <div *ngIf="loading">
+      Loading...
+    </div>
+    <div *ngIf="error">
+      Error :(
+    </div>
+    <div *ngIf="users">
+      <div *ngFor="let user of users">
+        <p>{{user.firstName}} {{user.lastName}}</p>
+      </div>
+    </div>
 </div>
