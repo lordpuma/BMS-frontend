@@ -9,7 +9,7 @@ const query = gql`{
   firstName
   lastName
   }
-}`
+}`;
 
 @Component({
   selector: 'app-external-api',
