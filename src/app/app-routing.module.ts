@@ -7,7 +7,8 @@ import { ExternalApiComponent } from './external-api/external-api.component';
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule),
+    // loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule),
+    loadChildren: './auth/auth.module#AuthModule',
   },
   {
     path: 'profile',
