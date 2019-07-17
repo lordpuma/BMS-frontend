@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
-import {Apollo} from 'apollo-angular';
+import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import {Subscription} from 'rxjs';
+import { Subscription } from 'rxjs';
 
-const query = gql`{
-  users {
-  firstName
-  lastName
+const query = gql`
+  {
+    users {
+      firstName
+      lastName
+    }
   }
-}`;
+`;
 
 @Component({
   selector: 'app-external-api',
   templateUrl: './external-api.component.html',
-  styleUrls: ['./external-api.component.scss'],
+  styleUrls: ['./external-api.component.scss']
 })
 export class ExternalApiComponent implements OnInit {
-
   responseJson: string;
   hasResponse = false;
   users: any;
@@ -27,12 +28,11 @@ export class ExternalApiComponent implements OnInit {
   constructor(private apiService: ApiService, private apollo: Apollo) {}
 
   ngOnInit() {
-
-    this.querySubscription = this.apollo.watchQuery<any>({
-      query
-    })
-      .valueChanges
-      .subscribe(({ data, loading }) => {
+    this.querySubscription = this.apollo
+      .watchQuery<any>({
+        query
+      })
+      .valueChanges.subscribe(({ data, loading }) => {
         this.users = data.users;
       });
   }
