@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth/auth-guard.guard';
 import { ExternalApiComponent } from './external-api/external-api.component';
 
+// TODO: make loadChildren use dynamic layout once angular fixes AOT with it.
 const routes: Routes = [
   {
     path: 'auth',
@@ -19,7 +20,12 @@ const routes: Routes = [
     path: 'external-api',
     component: ExternalApiComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'users',
+    loadChildren: './users/users.module#UsersModule',
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({
